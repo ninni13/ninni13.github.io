@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f6">
+  <meta name="description" content="Chengni Yang — full-stack developer building reliable web and mobile products. Explore engineering experience, projects, and technical skills.">
+  <meta property="og:title" content="Chengni Yang | Full-Stack Developer">
+  <meta property="og:description" content="Engineering experience, featured projects, and a little about me.">
+  <title>Chengni Yang | Full-Stack Developer</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./data/content.js"></script>
+  <script defer src="./js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="#top" class="brand" aria-label="Chengni Yang homepage">Chengni Yang<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="hero-backdrop" aria-hidden="true"><div class="paper-splash paper-pink splash-one"></div><div class="paper-splash paper-yellow splash-two"></div><div class="paper-splash paper-sage splash-three"></div></div>
+    <section class="hero wrap" id="top" aria-label="Introduction">
+      <div class="hero-layout">
+        <div class="mac-window hero-window">
+          <div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">chengni.yang</span></div>
+          <div class="hero-content">
+            <div class="hero-text"><p class="hello">Hi, I'm</p><h1>Chengni<br>Yang<span class="title-mark">.</span></h1><p class="marker-title">Full-Stack Developer</p><p class="hero-blurb">A computer science master's student who builds reliable web and mobile applications — from backend systems to experiences people actually use.</p><div class="hero-links"><a class="button button-dark" href="https://github.com/ninni13" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="button button-outline" href="https://www.linkedin.com/in/cheng-ni-yang" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
+            <div class="hero-illustration"><div class="art-paper"></div><img src="./assets/desk-doodle.svg" width="360" height="310" alt="Line illustration of a laptop, a warm drink and books"></div>
+          </div>
+        </div>
+        <div class="mac-window status-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">currently.txt</span></div><div class="status-content" id="currently-list"></div><span class="tape tape-peach" aria-hidden="true"></span></div>
+      </div>
+    </section>
+    <section class="section wrap about-section" id="about">
+      <div class="section-topline"><span class="section-index">01 / GET TO KNOW ME</span></div>
+      <div class="mac-window about-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">about-me.md</span></div><div class="about-window-body"><div class="about-intro"><span class="highlight-heading">About Me</span><p class="about-lead">I like the part where an idea becomes something real.</p></div><div class="about-writing" id="about-copy"></div><div class="mini-scribble" aria-hidden="true">✳</div></div></div>
+    </section>
+    <section class="section wrap project-section" id="projects">
+      <div class="section-heading"><div><span class="section-index">02 / WORK I'M PROUD OF</span><h2><span class="highlight-heading">Portfolio Highlights</span></h2></div><p>Some of the projects I've worked on, the problems behind them, and the engineering decisions I helped make.</p></div>
+      <div id="projects-list" class="projects-list"></div>
+      <p class="project-disclaimer">Project visuals are original conceptual illustrations, not screenshots of the private applications. No private code or internal materials are published here.</p>
+    </section>
+    <div class="lower-wrap wrap">
+      <section class="section experience-section" id="experience"><div class="mac-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">experience.md</span></div><div class="compact-body"><h2><span class="highlight-heading">Experience</span></h2><div id="experience-list" class="timeline"></div></div></div></section>
+      <div class="lower-right">
+        <section class="section education-section" id="education"><div class="mac-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">education.txt</span></div><div class="compact-body"><h2><span class="highlight-heading">Education</span></h2><div id="education-list" class="education-list"></div></div></div></section>
+        <section class="section skills-section" id="skills"><div class="mac-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">skills.json</span></div><div class="compact-body"><h2><span class="highlight-heading">Skills &amp; Tools</span></h2><div id="skills-list" class="skills-grid"></div></div></div></section>
+      </div>
+    </div>
+    <section class="contact-section" id="contact"><div class="wrap contact-layout"><div><span class="section-index">03 / SAY HELLO</span><h2>Let's keep<br>in <em>touch.</em></h2><p>I'm always happy to connect about software engineering, interesting projects, and opportunities to collaborate.</p></div><div class="mac-window contact-window"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span class="window-name">contact.txt</span></div><div class="contact-inner" id="contact-links"></div></div></div></section>
+  </main>
+  <footer class="footer wrap"><span>© <span id="year">2026</span> Chengni Yang</span><span>Made with care and a little curiosity.</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
