@@ -4,9 +4,10 @@ A bright, English-language personal portfolio with a soft pink paper aesthetic a
 
 ## What is included
 
-- About Me, Portfolio Highlights, Experience, Education, Skills and Contact
-- Three detailed private-project summaries (MomWeight, Grouplet, Cheap.Guide)
-- Real GitHub, LinkedIn, and email links; **no fabricated private project repositories**
+- About Me, Portfolio Highlights, Experience, Education, Skills, and a concise Hero email contact
+- Three private Featured Projects with concise homepage cards and shared detail pages (MomWeight, Cheap.Guide, Grouplet)
+- Two verified public Other Projects linked to GitHub (MoodJournal and PaperMind)
+- Real GitHub, LinkedIn, email, repository, and approved product links; **no fabricated private project repositories**
 - Responsive layout, keyboard-accessible navigation, reduced-motion support
 - A reusable `AGENTS.md` detailing data format, UI rules, safety constraints, new content workflow, and acceptance checks
 
@@ -30,27 +31,28 @@ Then open `http://localhost:8000`.
 3. Open the repository **Settings → Pages**.
 4. Under **Build and deployment**, choose **Deploy from a branch**, branch **main**, folder **/(root)**, and Save.
 5. Once GitHub reports the site published, your URL will normally be `https://ninni13.github.io/chengni-yang/`.
-6. Confirm mobile layout, GitHub / LinkedIn links, and all three project descriptions on the live site.
+6. Confirm mobile layout, GitHub / LinkedIn links, all five homepage project cards, and the three Featured detail pages on the live site.
 
 GitHub's instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-## Update a project
+## Update projects
 
 1. Read `AGENTS.md`.
-2. Add or update one object inside `window.PORTFOLIO_DATA.projects` in `data/content.js`. Each project must provide a slug, title bar label, name, subtitle, role, category, summary, contributions, stack, and known conceptual-art template.
+2. Add or update an object in `window.PORTFOLIO_DATA.featuredProjects` or `otherProjects` in `data/content.js`. Featured Projects include complete `home` and `detail` data plus a thin `projects/{slug}.html` shell. Other Projects require a verified public GitHub repository and render only on the homepage.
 3. Validate:
 
 ```bash
 python3 scripts/validate_content.py
 node --check data/content.js
 node --check js/app.js
+node --check js/project-detail.js
 ```
 
-4. Reload the website. The new project window will render automatically. For a new art template, update renderer and CSS explicitly. To update roles, education or skills, edit corresponding data arrays; do not hardcode cards in `index.html`.
+4. Reload the website. Project cards render automatically from data, while every Featured page uses the shared `js/project-detail.js` and `css/project-detail.css`. To update roles, education or skills, edit corresponding data arrays; do not hardcode cards in `index.html`.
 
 ## Privacy and media
 
-The illustrated project panels are **concept art, not actual app screenshots**. The individual projects are private and no deep links to private repos are included. Publish real screenshots only after reviewing them for confidential details and receiving explicit approval.
+Featured project repositories are private and are not linked. Other Project repositories are public and verified from the owner's GitHub account. Publish real screenshots only after reviewing them for confidential details and receiving explicit approval. Detail-page links, screenshots, and Technical Deep Dives are optional and remain completely hidden when no verified content is available.
 
 ## Assignment hand-in checklist
 

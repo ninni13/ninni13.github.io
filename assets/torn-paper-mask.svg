@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
+  <defs>
+    <filter id="torn-edge" x="0" y="0" width="1000" height="600" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.095" numOctaves="4" seed="29" result="edge-noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="edge-noise" scale="12" xChannelSelector="R" yChannelSelector="B"/>
+    </filter>
+  </defs>
+  <path fill="#fff" filter="url(#torn-edge)" d="M52 90C118 58 169 76 228 53c70-27 119-4 180-20 70-18 123 18 188 6 77-14 123 25 184 25 66 0 111 19 157 55 26 54 2 102 18 150 20 59-9 99-4 151-30 49-83 51-135 73-61 26-117 2-177 22-72 23-122-4-185 11-66 16-119-20-178-8-69 15-116-20-169-18-61 2-106-29-143-62-19-53 3-100-8-150-13-59 18-104 4-158 8-58-15-108 13-158Z"/>
+</svg>
