@@ -4,8 +4,8 @@ A public, English-language portfolio presenting Chengni Yang's software engineer
 
 ## Live Website
 
-- Website: [https://ninni13.github.io/chengni-yang/](https://ninni13.github.io/chengni-yang/)
-- GitHub repository: [https://github.com/ninni13/chengni-yang](https://github.com/ninni13/chengni-yang)
+- Website: [https://ninni13.github.io/](https://ninni13.github.io/)
+- GitHub repository: [https://github.com/ninni13/ninni13.github.io](https://github.com/ninni13/ninni13.github.io)
 
 ## Project Overview
 
@@ -39,7 +39,7 @@ Technologies listed inside project cards and detail pages describe those individ
 ## Project Structure
 
 ```text
-chengni-yang/
+ninni13.github.io/
 ├── AGENTS.md
 ├── README.md
 ├── index.html
@@ -71,8 +71,8 @@ chengni-yang/
 Clone the repository and start a local static server:
 
 ```bash
-git clone https://github.com/ninni13/chengni-yang.git
-cd chengni-yang
+git clone https://github.com/ninni13/ninni13.github.io.git
+cd ninni13.github.io
 python3 -m http.server 8000
 ```
 
@@ -108,12 +108,12 @@ Preview changes at desktop and mobile widths before publishing.
 
 The site is published with GitHub Pages using these settings:
 
-- Repository: [`ninni13/chengni-yang`](https://github.com/ninni13/chengni-yang)
+- Repository: [`ninni13/ninni13.github.io`](https://github.com/ninni13/ninni13.github.io)
 - Branch: `main`
 - Publishing folder: `/(root)`
-- Published URL: [https://ninni13.github.io/chengni-yang/](https://ninni13.github.io/chengni-yang/)
+- Published URL: [https://ninni13.github.io/](https://ninni13.github.io/)
 
-Pushes to `main` are republished by GitHub Pages. Assets and internal links must remain relative so the site continues to work from the `/chengni-yang/` project subdirectory rather than only from a domain root.
+Pushes to `main` are republished by GitHub Pages. This repository is a GitHub Pages User Site, so it is served from the domain root `/`. Assets and internal links remain relative to support local preview and navigation between the homepage and project detail pages.
 
 ## AI Development Guidelines
 

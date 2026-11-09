@@ -144,7 +144,7 @@ Validate at 1440px, 1024px, 768px, and 375px.
 ## 4. Project Structure
 
 ```text
-chengni-yang/
+ninni13.github.io/
 ├── AGENTS.md
 ├── README.md
 ├── index.html
@@ -177,7 +177,7 @@ chengni-yang/
 window.PORTFOLIO_DATA = { ... };
 ```
 
-Use JSON-compatible values inside the object. Do not replace it with `fetch()`; direct `file://` preview must continue to work. Keep relative paths compatible with deployment under `/chengni-yang/` on GitHub Pages.
+Use JSON-compatible values inside the object. Do not replace it with `fetch()`; direct `file://` preview must continue to work. Keep relative paths compatible with deployment at the GitHub Pages User Site root `/`.
 
 ## 5. Content Schema & Naming Conventions
 
@@ -390,7 +390,7 @@ Check 1440px, 1024px, 768px, and 375px:
 - Back to Projects returns to `../index.html#projects`.
 - Optional sections are absent when their data is absent.
 - Versioned CSS/JS/data and SVG/texture requests load successfully.
-- GitHub Pages relative paths work under `/chengni-yang/`.
+- GitHub Pages relative paths work from the User Site root `/`.
 
 ### Definition of Done
 
