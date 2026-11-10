@@ -57,6 +57,7 @@ ninni13.github.io/
 │   └── content.js
 ├── js/
 │   ├── app.js
+│   ├── navigation.js
 │   └── project-detail.js
 ├── projects/
 │   ├── momweight.html
@@ -97,6 +98,7 @@ Run the available checks after making changes:
 ```bash
 python3 scripts/validate_content.py
 node --check data/content.js
+node --check js/navigation.js
 node --check js/app.js
 node --check js/project-detail.js
 git diff --check

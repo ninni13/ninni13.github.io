@@ -101,6 +101,9 @@ Maintain strong text contrast. Body copy is generally 17–18px with at least 1.
 
 - The fixed top navigation contains exactly: About, Projects, Experience, Skills.
 - Detail-page navigation uses the same labels and points to `../index.html#...` anchors.
+- Reuse `js/navigation.js` for fixed-navigation scroll state and mobile-menu behavior on the homepage and every detail page; do not duplicate this logic in page renderers.
+- At the top of a page, the navigation background, divider, and shadow are absent. After scrolling more than 20px, `.is-scrolled` uses a highly transparent Liquid Glass treatment: `rgba(251, 248, 246, 0.12)`, low-contrast radial/linear highlights, and `blur(20px) saturate(165%) contrast(104%)`. The glass layer extends about 30px below the header and fades out through a vertical mask, with no bottom divider or external drop shadow; the state transition remains approximately 200ms.
+- Opening the mobile menu uses a more opaque `rgba(251, 248, 246, 0.52)` version of the same glass treatment for contrast. `prefers-reduced-motion` disables the transition through the global reduced-motion rule.
 - The Hero is one full-width `.mac-window` inside the shared `.wrap`. It contains the name, highlighted `Software Engineer`, one short description, and buttons ordered GitHub, LinkedIn, Email.
 - GitHub and LinkedIn URLs/icons are currently authored in `index.html`. Email is selected from `PORTFOLIO_DATA.contact` by `js/app.js`. If a social URL changes, update both the visible HTML link and the matching contact record.
 
@@ -153,7 +156,8 @@ ninni13.github.io/
 │   ├── style.css                 # Homepage tokens, components, and responsive rules
 │   └── project-detail.css        # Shared Featured detail-page styles
 ├── js/
-│   ├── app.js                    # Homepage data renderers and navigation behavior
+│   ├── app.js                    # Homepage data renderers and URL cleanup
+│   ├── navigation.js             # Shared fixed navigation and mobile-menu behavior
 │   └── project-detail.js         # Shared Featured detail-page renderer
 ├── data/
 │   └── content.js                # All structured portfolio content
@@ -368,6 +372,7 @@ Keep shared navigation, Footer, relative `../` asset paths, and version query pa
 ```bash
 python3 scripts/validate_content.py
 node --check data/content.js
+node --check js/navigation.js
 node --check js/app.js
 node --check js/project-detail.js
 git diff --check

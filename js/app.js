@@ -146,20 +146,12 @@
     target.href=email.url;
     target.setAttribute('aria-label',`Email Chengni Yang at ${email.display}`);
   }
-  function setupMenu(){
-    const btn=$('.menu-toggle'),nav=$('#site-nav');
-    btn.addEventListener('click',()=>{
-      const open=btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded',String(!open));btn.setAttribute('aria-label',open?'Open navigation':'Close navigation');nav.classList.toggle('open',!open);
-    });
-    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open navigation');}));
-  }
   function cleanIndexUrl(){
     if(!/^https?:$/.test(window.location.protocol) || !window.location.pathname.endsWith('/index.html')) return;
     const cleanPath=window.location.pathname.slice(0,-'index.html'.length);
     window.history.replaceState(window.history.state,'',`${cleanPath}${window.location.search}${window.location.hash}`);
   }
-  renderAbout();renderProjects();renderExperience();renderEducation();renderSkills();renderHeroEmail();setupMenu();
+  renderAbout();renderProjects();renderExperience();renderEducation();renderSkills();renderHeroEmail();
   $('#year').textContent=String(new Date().getFullYear());
   cleanIndexUrl();
 })();
