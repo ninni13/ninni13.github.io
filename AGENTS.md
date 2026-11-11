@@ -73,6 +73,7 @@ Maintain strong text contrast. Body copy is generally 17–18px with at least 1.
 - Reuse `.mac-window`, `.window-bar`, `.traffic`, and `.window-name`.
 - Keep the thin outer border, subtle shadow, title-bar divider, rounded corners, and red/yellow/green traffic lights.
 - Windows do not overlap, and content must remain visible at every supported viewport.
+- On fine-pointer devices, the Hero (`chengni.yang`) and About (`about-me.md`) windows use a restrained 3px hover lift with a slightly deeper shadow. The effect must remain subtler than the Featured/Other Project card hover and must not move under reduced-motion preferences.
 
 #### Pink marker
 
@@ -82,6 +83,7 @@ Maintain strong text contrast. Body copy is generally 17–18px with at least 1.
 - Featured homepage cards use the small marker on `Project Overview`, `Key Contributions`, and `Core Technologies` only. Project Role is plain text beside the project name.
 - Detail-page Role and section headings are unhighlighted.
 - Marker width follows text width; it must not stretch across a flex container.
+- Highlighted headings and labels draw their marker once from 0% to 100% when their containing Scroll Reveal element enters the viewport, then remain complete; they do not depend on hover. Use the shared `marker-sweep` keyframe for about 480ms after a short reveal delay so initially visible content still animates reliably. Project action links such as `View Details` and `View Repository` remain understated underlined text links without markers. Without reveal JavaScript or with reduced motion, markers remain fully visible.
 
 #### Paper decoration
 
@@ -94,6 +96,13 @@ Maintain strong text contrast. Body copy is generally 17–18px with at least 1.
 - Reuse the existing inline SVG conventions and `assets/github-mark.svg` / `assets/linkedin-in.svg`.
 - Keep visible keyboard focus states.
 - Use understated text links for project websites, repositories, Back to Projects, and Back to top; do not convert them into large filled cards.
+- The Back to top SVG may move up slightly and rotate on hover or keyboard focus. Keep the motion subtle, animate only the icon, retain smooth scrolling, and disable the transform for `prefers-reduced-motion`.
+
+#### Scroll reveal
+
+- Reuse `js/reveal.js` for one-time section reveals on the homepage and Featured Project detail pages. Do not duplicate reveal observers in page renderers.
+- Reveal motion stays subtle: approximately 12px upward travel, a short opacity fade, no more than 2px initial blur, and about 420–520ms duration. Small sibling groups may stagger by up to 120ms.
+- Reveal is progressive enhancement. Content remains visible when JavaScript or `IntersectionObserver` is unavailable, and `prefers-reduced-motion` bypasses the effect entirely.
 
 ### 3.3 Page Layouts
 
@@ -116,6 +125,7 @@ Maintain strong text contrast. Body copy is generally 17–18px with at least 1.
 - About renders `PORTFOLIO_DATA.about` as one full-width reading column inside `about-me.md`.
 - Featured Projects use a two-column desktop grid. MomWeight and Cheap.Guide share the first row and stretch to the same natural height; `View Details` aligns at the bottom. Grouplet follows in source order.
 - Featured cards are text-only: category, title plus plain Role, subtitle, overview, 2–3 contributions, 3–5 core technologies, and `View Details`.
+- On hover or keyboard focus within a project card, Featured and Other Project windows may rise by up to 4px with a slightly deeper shadow. Featured `View Details` arrows may move right by up to 4px. Keep transitions around 180–200ms, limit hover motion to fine-pointer devices, and disable positional transforms for `prefers-reduced-motion`.
 - Featured `Core Technologies` are plain 15px text separated visually with `·`, not chips.
 - Other Projects use two equal-height desktop cards with bottom-aligned repository links. Their stack currently uses compact tags.
 - Experience and the Education/Skills column use a 50/50 desktop split. Skills render as Category / Technologies text rows from structured data.
@@ -158,6 +168,7 @@ ninni13.github.io/
 ├── js/
 │   ├── app.js                    # Homepage data renderers and URL cleanup
 │   ├── navigation.js             # Shared fixed navigation and mobile-menu behavior
+│   ├── reveal.js                 # Shared progressive scroll-reveal behavior
 │   └── project-detail.js         # Shared Featured detail-page renderer
 ├── data/
 │   └── content.js                # All structured portfolio content
@@ -373,6 +384,7 @@ Keep shared navigation, Footer, relative `../` asset paths, and version query pa
 python3 scripts/validate_content.py
 node --check data/content.js
 node --check js/navigation.js
+node --check js/reveal.js
 node --check js/app.js
 node --check js/project-detail.js
 git diff --check
