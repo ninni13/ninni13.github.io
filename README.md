@@ -13,13 +13,14 @@ This portfolio is designed for software engineering job searches. It combines a 
 
 ## Features
 
-- About Me introduction and external contact links
+- About Me introduction and external profile links
 - Featured Projects with dedicated detail pages
 - Other Projects linked to confirmed public GitHub repositories
 - Experience and Education sections
 - Data-driven Skills & Tools presentation
 - Fixed, responsive navigation and mobile-friendly layouts
-- Secure external links for GitHub, LinkedIn, email, and approved project websites
+- Secure external links for GitHub, LinkedIn, and approved project websites
+- Subtle, motion-safe hover feedback on decorative macOS-style traffic lights
 
 ## Tech Stack
 
