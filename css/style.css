@@ -582,8 +582,7 @@ body{padding-top:84px}
   .marker-title.marker-highlight{margin-bottom:24px}
 }
 
-/* Compact neutral footer and data-driven Hero email button. */
-.email-icon{display:block;width:18px;height:18px;flex:0 0 18px}
+/* Compact neutral footer. */
 .site-footer,.detail-footer{background:var(--bg);border-top:1px solid rgba(214,205,202,.58)}
 .footer{
   min-height:96px;

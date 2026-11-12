@@ -339,11 +339,6 @@ window.PORTFOLIO_DATA = {
   ],
   "contact": [
     {
-      "label": "Email",
-      "display": "ninni.yang.tw@gmail.com",
-      "url": "mailto:ninni.yang.tw@gmail.com"
-    },
-    {
       "label": "GitHub",
       "display": "github.com/ninni13",
       "url": "https://github.com/ninni13"

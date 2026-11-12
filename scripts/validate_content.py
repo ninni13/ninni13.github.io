@@ -103,7 +103,6 @@ for group in data['skills']:
 for item in data['contact']:
     assert nonempty(item.get('label')) and nonempty(item.get('display'))
     assert item['url'].startswith(('https://', 'mailto:'))
-assert any(item['label'] == 'Email' and item['url'].startswith('mailto:') for item in data['contact']), 'Hero requires a confirmed Email contact'
 
 assert 'NTUNHS' not in raw and 'Interests' not in raw, 'Public page must exclude excluded sections'
 print(

@@ -139,19 +139,12 @@
       target.append(row);
     });
   }
-  function renderHeroEmail(){
-    const target=$('#hero-email');
-    const email=data.contact.find(item=>item.label==='Email'&&item.url.startsWith('mailto:'));
-    if(!email){ target.hidden=true; return; }
-    target.href=email.url;
-    target.setAttribute('aria-label',`Email Chengni Yang at ${email.display}`);
-  }
   function cleanIndexUrl(){
     if(!/^https?:$/.test(window.location.protocol) || !window.location.pathname.endsWith('/index.html')) return;
     const cleanPath=window.location.pathname.slice(0,-'index.html'.length);
     window.history.replaceState(window.history.state,'',`${cleanPath}${window.location.search}${window.location.hash}`);
   }
-  renderAbout();renderProjects();renderExperience();renderEducation();renderSkills();renderHeroEmail();
+  renderAbout();renderProjects();renderExperience();renderEducation();renderSkills();
   $('#year').textContent=String(new Date().getFullYear());
   cleanIndexUrl();
 })();
